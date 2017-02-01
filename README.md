@@ -20,8 +20,6 @@ LinkedIn User Page (once logged in):
 
 <img src="linkedinpage.png">
 
-**Live Demo**: http://ampingit.herokuapp.com/login
-
 
 - [Features](#features)
 - [Getting Started](#getting-started)
