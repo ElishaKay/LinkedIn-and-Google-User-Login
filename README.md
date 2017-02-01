@@ -1,6 +1,8 @@
-Welcome friends to the Github Repo based on the wonderful project:
+Welcome friends to the Github Repo with 6 User Login Options.
 
-https://github.com/sahat/hackathon-starter
+The project is a trimmed-down version of a wonderful repo found here: https://github.com/sahat/hackathon-starter
+
+Screenshots:
 
 <img src="signin.png">
 
@@ -24,7 +26,6 @@ LinkedIn User Page (once logged in):
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Obtaining API Keys](#obtaining-api-keys)
-- [Mongoose Cheatsheet](#mongoose-cheatsheet)
 - [Deployment with Heroku](#deployment)
 - [License](#license)
 
@@ -208,47 +209,6 @@ having a nested folder structure, if that makes things easier for you.
 Just don't forget to update `extends ../layout`  and corresponding
 `res.render()` paths in controllers.
 
-
-###Mongoose Cheatsheet
-
-#### Find all users:
-```js
-User.find((err, users) => {
-  console.log(users);
-});
-```
-
-#### Find a user by email:
-```js
-let userEmail = 'example@gmail.com';
-User.findOne({ email: userEmail }, (err, user) => {
-  console.log(user);
-});
-```
-
-#### Find 5 most recent user accounts:
-```js
-User
-  .find()
-  .sort({ _id: -1 })
-  .limit(5)
-  .exec((err, users) => {
-    console.log(users);
-  });
-```
-
-#### Get total count of a field from all documents:
-Let's suppose that each user has a `votes` field and you would like to count
-the total number of votes in your database across all users. One very
-inefficient way would be to loop through each document and manually accumulate
-the count. Or you could use [MongoDB Aggregation Framework](https://docs.mongodb.org/manual/core/aggregation-introduction/) instead:
-
-```js
-User.aggregate({ $group: { _id: null, total: { $sum: '$votes' } } }, (err, votesCount)  => {
-  console.log(votesCount.total);
-});
-```
-:top: <sub>[**back to top**](#table-of-contents)</sub>
 
 Deployment
 ----------
