@@ -26,10 +26,7 @@ LinkedIn User Page (once logged in):
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Obtaining API Keys](#obtaining-api-keys)
-
-- [FAQ](#faq)
-- [Cheatsheets](#cheatsheets)
-    - [Mongoose Cheatsheet](#mongoose-cheatsheet)
+- [Mongoose Cheatsheet](#mongoose-cheatsheet)
 - [Deployment with Heroku](#deployment)
 - [License](#license)
 
@@ -213,70 +210,6 @@ having a nested folder structure, if that makes things easier for you.
 Just don't forget to update `extends ../layout`  and corresponding
 `res.render()` paths in controllers.
 
-
-
-FAQ
----
-
-### How do I switch SendGrid for another email delivery service, like Mailgun or SparkPost?
-Inside the `nodemailer.createTransport` method arguments, simply change the service from `'Sendgrid'` to some other email service. Also, be sure to update both username and password below that. See the [list of all supported services](https://github.com/nodemailer/nodemailer-wellknown#supported-services) by Nodemailer.
-
-<hr>
-
-`partials/flash.pug` is a partial template that contains how flash messages
-are formatted. Previously, flash
-messages were scattered throughout each view that used flash messages
-(contact, login, signup, profile), but now, thankfully it is uses a *DRY* approach.
-
-The flash messages partial template is *included* in the `layout.pug`, along with footer and navigation.
-```jade
-body
-    include partials/header
-
-    .container
-      include partials/flash
-      block content
-
-    include partials/footer
-```
-
-<hr>
-
-### How do I create a new page?
-A more correct way to be to say "How do I create a new route". The main file `app.js` contains all the routes.
-Each route has a callback function associated with it. Sometimes you will see 3 or more arguments
-to routes. In cases like that, the first argument is still a URL string, while middle arguments
-are what's called middleware. Think of middleware as a door. If this door prevents you from
-continuing forward, you won't get to your callback function. One such example is a route that requires authentication.
-
-```js
-app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
-```
-
-It always goes from left to right. A user visits `/account` page. Then `isAuthenticated` middleware
-checks if you are authenticated:
-
-```js
-exports.isAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/login');
-};
-```
-
-If you are authenticated, you let this visitor pass through your "door" by calling `return next();`. It then proceeds to the
-next middleware until it reaches the last argument, which is a callback function that typically renders a template on `GET` requests or redirects on `POST` requests. In this case, if you are authenticated, you will be redirected to *Account Management* page, otherwise you will be redirected to *Login* page.
-
-```js
-exports.getAccount = (req, res) => {
-  res.render('account/profile', {
-    title: 'Account Management'
-  });
-};
-```
-
-<hr>
 
 ###Mongoose Cheatsheet
 
