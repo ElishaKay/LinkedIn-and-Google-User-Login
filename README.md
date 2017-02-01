@@ -2,17 +2,26 @@ Welcome friends to the Github Repo based on the wonderful project:
 
 https://github.com/sahat/hackathon-starter
 
-<img src="image.png">
+<img src="signin.png">
+
+LinkedIn OAuth:
+
+<img src="linkedin-auth.png">
+
+Google OAuth:
+
+<img src="google.png">
+
+FB User Page (once logged in):
+
+<img src="fbpage.png">
+
+LinkedIn User Page (once logged in):
+
+<img src="linkedinpage.png">
 
 **Live Demo**: http://ampingit.herokuapp.com/login
 
-Jump to [What's new in 4.3.0?](#changelog)
-
-:bulb: Looking for ES5 code? [Click here](https://github.com/sahat/hackathon-starter/tree/es5).
-
-A boilerplate for **Node.js** web applications.
-
------------------
 
 - [Features](#features)
 - [Prerequisites](#prerequisites)
@@ -58,23 +67,6 @@ Features
  - Delete Account
 - CSRF protection
 - **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, Stripe, LinkedIn and more.
-
-Prerequisites
--------------
-
-- [MongoDB](https://www.mongodb.org/downloads)
-- [Node.js 6.0+](http://nodejs.org)
-- Command Line Tools
- - <img src="http://deluge-torrent.org/images/apple-logo.gif" height="17">&nbsp;**Mac OS X:** [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (or **OS X 10.9+**: `xcode-select --install`)
- - <img src="http://dc942d419843af05523b-ff74ae13537a01be6cfec5927837dcfe.r14.cf1.rackcdn.com/wp-content/uploads/windows-8-50x50.jpg" height="17">&nbsp;**Windows:** [Visual Studio](https://www.visualstudio.com/products/visual-studio-community-vs)
- - <img src="https://lh5.googleusercontent.com/-2YS1ceHWyys/AAAAAAAAAAI/AAAAAAAAAAc/0LCb_tsTvmU/s46-c-k/photo.jpg" height="17">&nbsp;**Ubuntu** / <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Logo_Linux_Mint.png" height="17">&nbsp;**Linux Mint:** `sudo apt-get install build-essential`
- - <img src="http://i1-news.softpedia-static.com/images/extra/LINUX/small/slw218news1.png" height="17">&nbsp;**Fedora**: `sudo dnf groupinstall "Development Tools"`
- - <img src="https://en.opensuse.org/images/b/be/Logo-geeko_head.png" height="17">&nbsp;**OpenSUSE:** `sudo zypper install --type pattern devel_basis`
-
-**Note:** If you are new to Node or Express, I recommend to watch
-[Node.js and Express 101](https://www.youtube.com/watch?v=BN0JlMZCtNU)
-screencast by Alex Ford that teaches Node and Express from scratch. Alternatively,
-here is another great tutorial for complete beginners - [Getting Started With Node.js, Express, MongoDB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/).
 
 Getting Started
 ---------------
@@ -210,73 +202,6 @@ The same goes for other providers.
  - *Secret Key* is your **clientSecret**
 
 <hr>
-
-<img src="https://stripe.com/img/about/logos/logos/black@2x.png" width="200">
-- <a href="https://stripe.com/" target="_blank">Sign up</a> or log into your <a href="https://manage.stripe.com" target="_blank">dashboard</a>
-- Click on your profile and click on Account Settings
-- Then click on **API Keys**
-- Copy the **Secret Key**. and add this into `.env` file
-<hr>
-
-<img src="https://pixabay.com/static/uploads/photo/2015/05/26/09/37/paypal-784404_960_720.png" width="200">
-- Visit <a href="https://developer.paypal.com" target="_blank">PayPal Developer</a>
-- Log in to your PayPal account
-- Click **Applications > Create App** in the navigation bar
-- Enter *Application Name*, then click **Create app**
-- Copy and paste *Client ID* and *Secret* keys into `.env` file
-- *App ID* is **client_id**, *App Secret* is **client_secret**
-- Change **host** to api.paypal.com if you want to test against production and use the live credentials
-
-<hr>
-
-<img src="http://33.media.tumblr.com/ffaf0075be879b3ab0b87f0b8bcc6814/tumblr_inline_n965bkOymr1qzxhga.png" width="200">
-- Go to <a href="https://developer.foursquare.com" target="_blank">Foursquare for Developers</a>
-- Click on **My Apps** in the top menu
-- Click the **Create A New App** button
-- Enter *App Name*, *Welcome page url*,
-- For **Redirect URI**: http://localhost:3000/auth/foursquare/callback
-- Click **Save Changes**
-- Copy and paste *Client ID* and *Client Secret* keys into `.env` file
-
-<hr>
-
-<img src="http://img4.wikia.nocookie.net/__cb20130520163346/logopedia/images/8/8d/Tumblr_logo_by_x_1337_x-d5ikwpp.png" width="200">
-- Go to <a href="http://www.tumblr.com/oauth/apps" target="_blank">http://www.tumblr.com/oauth/apps</a>
-- Once signed in, click **+Register application**
-- Fill in all the details
-- For **Default Callback URL**: `http://localhost:3000/auth/tumblr/callback`
-- Click **✔Register**
-- Copy and paste *OAuth consumer key* and *OAuth consumer secret* keys into `.env` file
-
-<hr>
-
-<img src="http://www.technologytell.com/gaming/files/2012/01/steam_logo.jpg" width="200">
-- Go to <a href="http://steamcommunity.com/dev/apikey" target="_blank">http://steamcommunity.com/dev/apikey</a>
-- Sign in with your existing Steam account
-- Enter your *Domain Name*, then and click **Register**
-- Copy and paste *Key* into `.env` file
-
-<hr>
-
-<img src="https://sendgrid.com/brand/sg-logo-300.png" width="200">
-- Go to <a href="https://sendgrid.com/user/signup" target="_blank">https://sendgrid.com/user/signup</a>
-- Sign up and **confirm** your account via the *activation email*
-- Then enter your SendGrid *Username* and *Password* into `.env` file
-
-<hr>
-
-<img src="https://raw.github.com/mailgun/media/master/Mailgun_Primary.png" width="200">
-- Go to <a href="http://www.mailgun.com" target="_blank">http://www.mailgun.com</a>
-- Sign up and add your *Domain Name*
-- From the domain overview, copy and paste the default SMTP *Login* and *Password* into `.env` file
-
-<hr>
-
-<img src="https://s3.amazonaws.com/ahoy-assets.twilio.com/global/images/wordmark.svg" width="200">
-- Go to <a href="https://www.twilio.com/try-twilio" target="_blank">https://www.twilio.com/try-twilio</a>
-- Sign up for an account.
-- Once logged into the dashboard, expand the link 'show api credentials'
-- Copy your Account Sid and Auth Token
 
 Project Structure
 -----------------
@@ -436,48 +361,6 @@ where 1st parameter is an array, and a 2nd parameter is an object to search for.
 FAQ
 ---
 
-### Why do I get `403 Error: Forbidden` when submitting a form?
-You need to add the following hidden input element to your form. This has been
-added in the [pull request #40](https://github.com/sahat/hackathon-starter/pull/40)
-as part of the CSRF protection.
-
-```
-input(type='hidden', name='_csrf', value=_csrf)
-```
-
-**Note:** It is now possible to whitelist certain URLs. In other words you can
-specify a list of routes that should bypass CSRF verification check.
-
-**Note 2:** To whitelist dynamic URLs use regular expression tests inside the
-CSRF middleware to see if `req.originalUrl` matches your desired pattern.
-
-### I am getting MongoDB Connection Error, how do I fix it?
-That's a custom error message defined in `app.js` to indicate that there was a
-problem connecting to MongoDB:
-
-```js
-mongoose.connection.on('error', () => {
-  console.error('MongoDB Connection Error. Please make sure MongoDB is running.');
-});
-```
-You need to have a MongoDB server running before launching `app.js`. You can
-download MongoDB [here](http://mongodb.org/downloads), or install it via a package manager.
-<img src="http://dc942d419843af05523b-ff74ae13537a01be6cfec5927837dcfe.r14.cf1.rackcdn.com/wp-content/uploads/windows-8-50x50.jpg" height="17">
-Windows users, read [Install MongoDB on Windows](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/).
-
-**Tip:** If you are always connected to the internet, you could just use
-[mLab](https://mongolab.com/) or [Compose](https://www.compose.io/) instead
-of downloading and installing MongoDB locally. You will only need to update database credentials
-in `.env` file.
-
-### I get an error when I deploy my app, why?
-Chances are you haven't changed the *Database URI* in `.env`. If `MONGODB`/`MONGOLAB_URI` is
-set to `localhost`, it will only work on your machine as long as MongoDB is
-running. When you deploy to Heroku, OpenShift or some other provider, you will not have MongoDB
-running on `localhost`. You need to create an account with [mLab](https://mongolab.com/)
-or [Compose](https://www.compose.io/), then create a free tier database.
-See [Deployment](#deployment) for more information on how to setup an account
-and a new database step-by-step with mLab.
 
 ### Why Pug (Jade) instead of Handlebars?
 When I first started this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
@@ -496,17 +379,9 @@ When working solo on small projects I actually prefer to have everything inside 
 REST API server.
 
 
-### Why is there no Mozilla Persona as a sign-in option?
-If you would like to use **Persona** authentication strategy, use the
-[pull request #64](https://github.com/sahat/hackathon-starter/pull/64) as a
-reference guide. I have explained my reasons why it could not be merged in
-[issue #63](https://github.com/sahat/hackathon-starter/issues/63#issuecomment-34898290).
-
 ### How do I switch SendGrid for another email delivery service, like Mailgun or SparkPost?
 Inside the `nodemailer.createTransport` method arguments, simply change the service from `'Sendgrid'` to some other email service. Also, be sure to update both username and password below that. See the [list of all supported services](https://github.com/nodemailer/nodemailer-wellknown#supported-services) by Nodemailer.
 
-How It Works (mini guides)
---------------------------
 
 This section is intended for giving you a detailed explanation about
 how a particular functionality works. Maybe you are just curious about
